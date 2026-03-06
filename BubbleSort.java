@@ -4,7 +4,7 @@ public class BubbleSort
 
 	public static void main(String[] args)
   	{
-		int[] sorted = {67,23,3,15,23,18,16};
+		int[] sorted = {67,23,3,15,29,18,16};
 
 		System.out.println(Arrays.toString(sorted));
 		sorted = bubbleSort(sorted);
@@ -31,7 +31,6 @@ public class BubbleSort
 						sorted[comparisons] = tempNum;
 					}
 				}
-				System.out.println(Arrays.toString(sorted));
 			}
 			return sorted; 
 		}
