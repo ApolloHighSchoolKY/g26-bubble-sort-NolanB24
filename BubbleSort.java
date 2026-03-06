@@ -1,34 +1,41 @@
+import java.util.Arrays;
 public class BubbleSort
 {
 
 	public static void main(String[] args)
   	{
-    	int[] myNums = {12, 15, 0, 44, 13, 1, 2};
-		int passes;
-		int comparisons;
-		//Holds the second,  number when you are value swapping
-		int tempNum;
+		int[] sorted = {67,23,3,15,23,18,16};
 
+		System.out.println(Arrays.toString(sorted));
+		sorted = bubbleSort(sorted);
+		System.out.println(Arrays.toString(sorted));
+		
+	}
 		//Loop once for each pass, where passes is one less than the number of items.
-		for(passes = 1; passes < myNums.length - 1; passes++)
-		{	
-			//Loop once for each comparison, where comparisons are one less than the number of unsorted.
-			for(comparisons = 0; comparisons < myNums.length - 1; comparisons++)
+		public static int[] bubbleSort (int[] unsorted)
+		{
+			int[] sorted = unsorted;
+			int passes;
+			int comparisons;
+			//Holds the second number when you are value swapping
+			int tempNum;
+			for(passes = 1; passes < sorted.length; passes++)
 			{	
-				if(myNums[comparisons] >= myNums[comparisons + 1])
-				{
-					tempNum = myNums[comparisons + 1];
-					myNums[comparisons + 1] = myNums[comparisons];
-					myNums[comparisons] = tempNum;
+				//Loop once for each comparison, where comparisons are one less than the number of unsorted.
+				for(comparisons = 0; comparisons < sorted.length - passes; comparisons++)
+				{	
+					if(sorted[comparisons] >= sorted[comparisons + 1])
+					{
+						tempNum = sorted[comparisons + 1];
+						sorted[comparisons + 1] = sorted[comparisons];
+						sorted[comparisons] = tempNum;
+					}
 				}
-				else
-				{
-					myNums[comparisons] = myNums[comparisons];
-					myNums[comparisons + 1] = myNums[comparisons + 1];
-				}
-				System.out.println(myNums);
+				System.out.println(Arrays.toString(sorted));
 			}
+			return sorted; 
 		}
+		
 		
 		
 
@@ -41,5 +48,5 @@ public class BubbleSort
 
 
 
-  	}
+  	
 }
