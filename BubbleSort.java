@@ -31,6 +31,7 @@ public class BubbleSort
 						sorted[comparisons] = tempNum;
 					}
 				}
+				
 			}
 			return sorted; 
 		}
